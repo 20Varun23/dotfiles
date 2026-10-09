@@ -1,0 +1,16 @@
+btop/
+fish/
+fyne/
+go/
+matplotlib/
+neofetch/
+posting/
+proceps/
+starship/
+tmux/
+uv/
+
+
+# Env variables
+.env
+.env.*
