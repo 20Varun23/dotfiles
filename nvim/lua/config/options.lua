@@ -10,4 +10,7 @@ vim.opt.scrolloff = 8
 vim.opt.backup = false
 vim.opt.swapfile = false
 vim.api.nvim_set_option("clipboard","unnamedplus")
+vim.opt.foldmethod = "indent" -- fallback when no treesitter parser
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
 vim.opt.completeopt = "menu,menuone,popup,noinsert" -- modern completion behaviour

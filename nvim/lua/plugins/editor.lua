@@ -3,6 +3,24 @@ return {
         "nvim-treesitter/nvim-treesitter",
         lazy = false,
         build = ":TSUpdate",
+        config = function()
+            -- no-op for parsers that are already installed
+            require("nvim-treesitter").install({
+                "lua", "vim", "vimdoc", "markdown", "markdown_inline",
+                "python", "go", "javascript", "typescript", "tsx",
+                "html", "css", "json", "bash",
+            })
+
+            -- start treesitter and use it for folds; fall back to indent folds
+            vim.api.nvim_create_autocmd("FileType", {
+                callback = function(args)
+                    if pcall(vim.treesitter.start, args.buf) then
+                        vim.wo[0][0].foldmethod = "expr"
+                        vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+                    end
+                end,
+            })
+        end,
     },
     {
         "nvim-lualine/lualine.nvim",
