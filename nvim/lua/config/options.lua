@@ -10,4 +10,4 @@ vim.opt.scrolloff = 8
 vim.opt.backup = false
 vim.opt.swapfile = false
 vim.api.nvim_set_option("clipboard","unnamedplus")
-vim.opt.completeopt = "menu,menuone,noselect" -- modern completion behaviour
+vim.opt.completeopt = "menu,menuone,popup,noinsert" -- modern completion behaviour
