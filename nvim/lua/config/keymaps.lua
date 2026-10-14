@@ -27,3 +27,37 @@ vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", {
 -- Fuzzy finder
 vim.keymap.set("n", "<leader>ff" ,"<cmd>Telescope find_files<cr>", {desc = "Find Files"})
 vim.keymap.set('n', '<leader>fg', "<cmd>Telescope live_grep<cr>", { desc = 'Telescope live grep' })
+
+-- Navigate between changes
+vim.keymap.set("n", "]g", function()
+    require("gitsigns").next_hunk()
+end, { desc = "Next Git change" })
+
+vim.keymap.set("n", "[g", function()
+
+    require("gitsigns").prev_hunk()
+end, { desc = "Previous Git change" })
+
+
+-- Stage and reset changes
+vim.keymap.set("n", "<leader>hs", function()
+    require("gitsigns").stage_hunk()
+end, { desc = "Stage hunk" })
+
+vim.keymap.set("n", "<leader>hr", function()
+    require("gitsigns").reset_hunk()
+end, { desc = "Reset hunk" })
+
+-- Preview and inspect
+vim.keymap.set("n", "<leader>hp", function()
+    require("gitsigns").preview_hunk()
+end, { desc = "Preview hunk" })
+
+vim.keymap.set("n", "<leader>hb", function()
+    require("gitsigns").blame_line()
+end, { desc = "Blame line" })
+
+vim.keymap.set("n", "<leader>hd", function()
+
+    require("gitsigns").diffthis()
+end, { desc = "Diff against index" })

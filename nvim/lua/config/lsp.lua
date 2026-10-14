@@ -5,6 +5,9 @@ vim.lsp.enable("gopls")
 vim.lsp.enable("html")
 vim.lsp.enable("cssls")
 vim.lsp.enable("ts_ls")
+vim.lsp.enable("dockerls")
+vim.lsp.enable("docker_compose_ls")
+vim.lsp.enable("yamlls")
 
 vim.diagnostic.config({ virtual_lines = { current_line = true}})
 vim.api.nvim_create_autocmd("LspAttach", {

@@ -1,4 +1,4 @@
-vim.cmd("colorscheme molokai")
+vim.cmd("colorscheme rosepine")
 
 require("config.keymaps")
 require("config.options")
