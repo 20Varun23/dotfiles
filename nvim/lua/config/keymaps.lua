@@ -12,6 +12,9 @@ vim.keymap.set("n","<leader>w","<C-w>",{desc="window navigation help"})
 vim.keymap.set("n", "<leader>t", "<cmd>terminal<CR>", { desc = "Open terminal" })
 vim.keymap.set("n", "<leader>b", "<cmd>ls<CR>", { desc = "List buffers" })
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
+vim.keymap.set("x", "<leader>p", '"_dP', {
+    desc = "Paste without overwriting register",
+})
 
 --moving lines
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down" })
